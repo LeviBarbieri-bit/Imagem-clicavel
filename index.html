@@ -13,21 +13,70 @@
   <body>
 
     <div class="container">
+        <audio controls><source src="assets/audio/sonoro.mp3" type="audio/mpeg"></audio>
         <div class="card card-group">
             <div class="card-body">
-                <div class="row">aa
+                <div class="row">
                     <div class="col-md-5 col-xs-3">
+                        <div id="card1" class="card conteudo" style="width: 18rem; display: none !important;">
+                            <div class="card-body" id="conteudo">
+                                teste
+                            </div>
+                        </div>
+                        <div class="circulo img0" id="circulo1"></div>
+                        <div class="circulo img0" id="circulo2"></div>
+                        <div class="circulo img0" id="circulo3"></div>
+                        <div class="circulo img0" id="circulo4"></div>
+                    
                         <img src="assets/img/front-back.png" id="produto-atual" class="img-fluid img-thumbnail" alt="...">
                     </div>
                     <div class='col-md-1 col-xs-3'>
                         <div class="img_lateral" id="img_lateral">
                         </div>
                     </div>
+                    <div class="col-md-5">
+                        <p>
+                            <h4>Xiaomi Redmi Note 9 128gb 4gb Ram Global + Nota</h4>
+                            <h3 style="color:red">R$1.499</span>
+                            <h5 style="color:green">em 12x R$142,39</h2>
+                            <h5>Chegará grátis entre os dias 23 e 25 nov.</h5>
+                            <a href="https://www.mercadolivre.com.br/xiaomi-redmi-note-9s-dual-sim-128-gb-azul-aurora-6-gb-ram/p/MLB15586826#searchVariation=MLB15586826&position=1&type=product&tracking_id=42ba2d06-a113-4170-8c64-bf6ac2f71a8f">  <button type="button" class="btn btn-primary btn-lg btn-block">Comprar</button></a>
+                        </p>
+                        <a href="https://www.mercadolivre.com.br/xiaomi-redmi-note-9s-dual-sim-128-gb-azul-aurora-6-gb-ram/p/MLB15586826#searchVariation=MLB15586826&position=1&type=product&tracking_id=42ba2d06-a113-4170-8c64-bf6ac2f71a8f">  <button type="button" class="btn btn-success btn-lg btn-block">Adionar ao Carrinho</button></a>
+                    </div>
                 </div>
+                
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Descrição</h4>
+                <p>
+                    <h3>Pensado para você</h3>
+                    O Xiaomi Note 9 possui o novo sistema operacional Android 10 que incorpora respostas inteligentes e ações sugeridas para todos os seus aplicativos. Entre as suas várias funcionalidades irá encontrar o tema escuro, a navegação por gestos e o modo livre de distração, para que você possa completar as suas tarefas enquanto desfruta ao máximo do seu dispositivo.
+                </p>
+                
+                <p>
+                    <h3>Fotografia profissional no seu bolso</h3>
+                    Descubra infinitas possibilidades para suas fotos com as 4 câmeras principais de sua equipe. Teste sua criatividade e jogue com iluminação, diferentes planos e efeitos para obter ótimos resultados.
+                </p>
+                
+                
+                <p>
+                    <h3> Desbloqueio facial e de impressão digital</h3> 
+                    Máxima segurança para que apenas você possa acessar o sua equipe. Você pode escolher entre o sensor de impressão digital para ativar seu telefone com um toque, ou o reconhecimento facial que permite desbloquear até 30% mais rápido.
+                </p>
+               
+               
+                <p>
+                    <h3>Bateria superior</h3> 
+                    Desconecte-se! Com a super bateria de 5020 mAh você terá energia por muito mais tempo para jogar, assistir séries ou trabalhar sem precisar recarregar seu celular.
+                </p>
             </div>
         </div>
     </div>
-
+    
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
@@ -36,6 +85,12 @@
 
 <script>
     $(document).ready(function() {
+       
+        $('.img0').show()
+        $('.img1').hide()
+        $('.img2').hide()
+        $('.img3').hide()
+
         ImagensLatereal = {
             "0" : "front-back.png", 
             "1": "front.png",
@@ -46,14 +101,47 @@
         $.each( ImagensLatereal, function( key, value ) {
           $('.img_lateral').append("<img src='assets/img/"+value+"' id='imglateral_"+key+"'  class='img-fluid img-thumbnail click-lateral' alt='...' onclick='trocaImagem("+key+")'><br>");
         });
-
+        
     });
 
     function trocaImagem(key)
     {
+
+        $.each( ImagensLatereal, function( objeto ) {
+            if(objeto == key)
+            {
+                $('#imglateral_' + key).css('border', '3px solid blue');
+                $('.img' + key).show()
+            } else {
+                $('.img' + objeto).hide()
+                $('#imglateral_' + objeto).css('border', '');
+            }
+        });    
+        
         var src = $('#imglateral_'+key).attr('src')
         $("#produto-atual").attr('src', src);
+        
     }
 
+    $(document).ready(function(){
+        $('#circulo1').popover({
+            title:'Câmera', 
+            html:true,
+            content:'<img src="assets/img/camera_frente_bonita.jpg">'
+        });
+
+         $('#circulo2').popover({
+            title:'Câmera Megapixels: 48 Mp + 8 Mp + 2 Mp + 2 Mp', 
+            html:true,
+            content:'<img src="assets/movie/camera.gif">'
+        });
+
+        $('#circulo3').popover({
+            title:'Bordas', 
+            html:true,
+            content:'<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>',
+        });
+
+    });
     
 </script>

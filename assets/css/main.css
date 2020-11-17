@@ -1,8 +1,69 @@
 .card-group {
     margin-top: 5%;   
+    
 }
+
+
 
 .click-lateral {
     cursor: pointer;
 }
 
+#circulo1 {
+    position: absolute;
+    top: 14px;
+    left: 93px;
+    cursor: pointer;
+    opacity : 0.5;
+    width: 30px;
+    height: 20px;
+    background: radial-gradient(circle closest-side,rgb(255, 255, 255) 0%,rgb(255, 255, 255) 98%,rgba(131, 131, 131, 0) 100%) ;
+}
+
+.circulo {
+    display: none;
+}
+
+
+#circulo2 {
+    top: 50px;
+    left: 220px;
+    position: absolute;
+    cursor: pointer;
+    opacity : 0.5;
+    width: 30px;
+    height: 20px;
+    background: radial-gradient(circle closest-side,rgb(255, 255, 255) 0%,rgb(255, 255, 255) 98%,rgba(131, 131, 131, 0) 100%) ;
+}
+
+#circulo3 {
+    position: absolute;
+    cursor: pointer;
+    opacity : 0.5;
+    width: 30px;
+    height: 20px;
+    background: radial-gradient(circle closest-side,rgb(255, 255, 255) 0%,rgb(255, 255, 255) 98%,rgba(131, 131, 131, 0) 100%) ;
+}
+
+#circulo4 {
+    top: 360px;
+    left: 130px;
+    position: absolute;
+    cursor: pointer;
+    opacity : 0.5;
+    width: 30px;
+    height: 20px;
+    background: radial-gradient(circle closest-side,rgb(255, 255, 255) 0%,rgb(255, 255, 255) 98%,rgba(131, 131, 131, 0) 100%) ;
+}
+
+audio {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+#toca {
+    cursor: pointer;
+}
