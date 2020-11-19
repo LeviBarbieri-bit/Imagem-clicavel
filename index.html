@@ -13,7 +13,7 @@
   <body>
 
     <div class="container">
-        <audio controls><source src="assets/audio/sonoro.mp3" type="audio/mpeg"></audio>
+        <audio id="audio" controls><source  src="assets/audio/sonoro.mp3" type="audio/mpeg"></audio>
         <div class="card card-group">
             <div class="card-body">
                 <div class="row">
@@ -26,7 +26,7 @@
                         <div class="circulo img0" id="circulo1"></div>
                         <div class="circulo img0" id="circulo2"></div>
                         <div class="circulo img0" id="circulo3"></div>
-                        <div class="circulo img0" id="circulo4"></div>
+                        <img id='circulo4' src="assets/img/botao-play.svg" class="circulo img0" alt="">
                     
                         <img src="assets/img/front-back.png" id="produto-atual" class="img-fluid img-thumbnail" alt="...">
                     </div>
@@ -85,7 +85,20 @@
 
 <script>
     $(document).ready(function() {
-       
+        $("#circulo4").click(function(){
+            var src = $('#circulo4').attr('src')
+
+            if(src === 'assets/img/botao-play.svg')
+            {
+                $('#audio').trigger("play");
+                $("#circulo4").attr('src', 'assets/img/botao-pausa.svg');
+
+            } else {
+                $('#audio').trigger("pause");
+                $("#circulo4").attr('src', 'assets/img/botao-play.svg');
+            }
+        });
+        
         $('.img0').show()
         $('.img1').hide()
         $('.img2').hide()
